@@ -21,7 +21,7 @@ class VocabularyQuizApp:
         self.default_font.configure(family="NanumGothic", size=12)
 
         root.title("Vocabulary Quiz")
-        root.geometry("420x280")
+        root.geometry("500x280")
         root.resizable(False, False)
 
         self.word_var = tk.StringVar(value="단어를 불러오는 중...")
