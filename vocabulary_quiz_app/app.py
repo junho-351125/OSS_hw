@@ -45,6 +45,21 @@ class VocabularyQuizApp:
         ttk.Label(root, textvariable=self.feedback_var).pack(pady=8)
         ttk.Label(root, textvariable=self.score_var).pack()
 
+        ###=========================단축키 명령어 추가 ==============================###
+        
+        # window용 Command+w(창 닫는 기능)
+        root.bind("<Control-w>", lambda event: root.destroy())
+        root.bind("<Control-W>", lambda event: root.destroy())
+        
+        # macOS용 Command+W(창 닫는 기능)
+        root.bind("<Command-w>", lambda event: root.destroy())
+        root.bind("<Command-W>", lambda event: root.destroy())
+        root.bind("<Meta-w>", lambda event: root.destroy())
+        root.bind("<Meta-W>", lambda event: root.destroy())
+
+        # esc(입력란 비우는 기능)
+        self.answer_entry.bind("<Escape>", lambda event: self.answer_entry.delete(0, tk.END))
+
         self.next_word()
 
     def next_word(self) -> None:
